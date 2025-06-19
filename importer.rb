@@ -56,7 +56,10 @@ unless api_token
   exit 1
 end
 
+### To Use Sandbox, Replace: ###
 client = Dnsimple::Client.new(access_token: api_token)
+### With: ###
+# client = Dnsimple::Client.new(base_url: "https://api.sandbox.dnsimple.com", access_token: api_token)
 
 zone_importer = ZonesImporter.new(client, account_id, provider_alias)
 domain_importer = DomainsImporter.new(client, account_id, provider_alias)
