@@ -1,0 +1,6 @@
+resource "dnsimple_domain" "<%= resource_id %>" {
+<% if provider_alias -%>
+  provider = dnsimple.<%= provider_alias %>
+<%- end -%>
+  name = "<%= domain.name %>"
+}

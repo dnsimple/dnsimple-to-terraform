@@ -1,0 +1,16 @@
+resource "dnsimple_zone_record" "<%= resource_id %>" {
+<% if provider_alias -%>
+  provider = dnsimple.<%= provider_alias %>
+<%- end -%>
+  zone_name = dnsimple_zone.<%= zone_resource_id %>.name
+  name      = "<%= record.name %>"
+  type      = "<%= record.type %>"
+  value     = "<%= record.content.gsub('"', '\"') %>"
+  ttl       = <%= record.ttl %>
+<% if record.priority && record.priority != "" -%>
+  priority  = <%= record.priority %>
+<%- end -%>
+<% if record.regions && !record.regions.all?("global") -%>
+  regions   = <%= record.regions %>
+<%- end -%>
+}

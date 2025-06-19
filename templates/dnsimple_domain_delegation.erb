@@ -1,0 +1,11 @@
+resource "dnsimple_domain_delegation" "<%= resource_id %>" {
+<% if provider_alias -%>
+  provider = dnsimple.<%= provider_alias %>
+<%- end -%>
+  domain = dnsimple_domain.<%= resource_id %>.name
+  name_servers = [
+<% name_servers.each do |name_server| -%>
+    "<%= name_server %>",
+<% end -%>
+  ]
+}

@@ -1,0 +1,11 @@
+resource "dnsimple_registered_domain" "<%= resource_id %>" {
+<% if provider_alias -%>
+  provider = dnsimple.<%= provider_alias %>
+<%- end -%>
+  name = dnsimple_domain.<%= resource_id %>.name
+  contact_id = <%= contact_id %>
+  auto_renew_enabled = <%= auto_renew_enabled %>
+  transfer_lock_enabled = <%= transfer_lock_enabled %>
+  whois_privacy_enabled = <%= whois_privacy_enabled %>
+  dnssec_enabled = <%= dnssec_enabled %>
+}

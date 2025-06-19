@@ -1,0 +1,29 @@
+resource "dnsimple_contact" "<%= resource_id %>" {
+<% if provider_alias -%>
+  provider = dnsimple.<%= provider_alias %>
+<%- end -%>
+<% if contact.label && !contact.label.empty? -%>
+  label = "<%= contact.label %>"
+<%- end -%>
+  first_name = "<%= contact.first_name %>"
+  last_name = "<%= contact.last_name %>"
+<% if contact.organization_name && !contact.organization_name.empty? -%>
+  organization_name = "<%= contact.organization_name %>"
+<%- end -%>
+<% if contact.job_title && !contact.job_title.empty? -%>
+  job_title = "<%= contact.job_title %>"
+<%- end -%>
+  address1 = "<%= contact.address1 %>"
+<% if contact.address2 && !contact.address2.empty? -%>
+  address2 = "<%= contact.address2 %>"
+<%- end -%>
+  city = "<%= contact.city %>"
+  state_province = "<%= contact.state_province %>"
+  postal_code = "<%= contact.postal_code %>"
+  country = "<%= contact.country %>"
+  phone = "<%= contact.phone %>"
+<% if contact.fax && !contact.fax.empty? -%>
+  fax = "<%= contact.fax %>"
+<%- end -%>
+  email = "<%= contact.email %>"
+}

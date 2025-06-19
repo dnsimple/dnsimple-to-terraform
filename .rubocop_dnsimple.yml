@@ -1,0 +1,46 @@
+---
+AllCops:
+  NewCops: enable
+
+# Multi-line differs from standard indentation, they are indented twice.
+Layout/FirstArgumentIndentation:
+  IndentationWidth: 4
+
+# Array indentation should be consistent with method/variable definition.
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+  IndentationWidth: 2
+
+# Hash indentation should be consistent with method/variable definition.
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+  IndentationWidth: 2
+
+Layout/LineLength:
+  Enabled: false
+  Max: 100
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+# Be consistent. The trailing comma also allows easy reordering,
+# and doesn't cause a diff in Git when you add a line to the bottom.
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+# Be consistent. The trailing comma also allows easy reordering,
+# and doesn't cause a diff in Git when you add a line to the bottom.
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
